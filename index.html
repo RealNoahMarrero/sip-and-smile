@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="friendly">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sip &amp; Smile | Event Bartending by Lisa Alicea</title>
+  <meta name="description" content="Event bartending in Dayton, OH — dry hire service with custom mixers, garnishes, ice, and tools. Weddings, parties, and more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['var(--font-display)', 'Georgia', 'serif'],
+            sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* ── Theme tokens ── */
+    [data-theme="friendly"] {
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-sans: 'Nunito Sans', system-ui, sans-serif;
+      --bg-body: #FAF7F2;
+      --bg-surface: #ffffff;
+      --bg-alt: #F0EBE3;
+      --bg-contact: rgba(232, 243, 236, 0.55);
+      --bg-header: rgba(250, 247, 242, 0.92);
+      --bg-card: #ffffff;
+      --bg-input: #FAF7F2;
+      --bg-footer: #3A4039;
+      --text-primary: #3A4039;
+      --text-muted: #6B7280;
+      --text-on-footer: #ffffff;
+      --accent: #5EAA7A;
+      --accent-dark: #3D7A56;
+      --accent-light: #E8F3EC;
+      --btn-bg: #E07A5F;
+      --btn-hover: #C9654D;
+      --btn-text: #ffffff;
+      --border: rgba(94, 170, 122, 0.18);
+      --border-strong: rgba(94, 170, 122, 0.35);
+      --shadow: 0 4px 14px rgba(94, 170, 122, 0.08);
+      --radius: 1rem;
+      --radius-btn: 9999px;
+      --hero-bg: linear-gradient(160deg, #E8F3EC 0%, #FAF7F2 45%, #F5EDE4 100%);
+      --img-border: #E8F3EC;
+      --img-border-width: 4px;
+      --faq-hover: rgba(232, 243, 236, 0.65);
+      --toggle-bg: var(--accent-light);
+      --toggle-active: var(--accent);
+    }
+
+    [data-theme="luxury"] {
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --bg-body: #0F1419;
+      --bg-surface: #1A2332;
+      --bg-alt: #0F1419;
+      --bg-contact: #1A2332;
+      --bg-header: rgba(15, 20, 25, 0.88);
+      --bg-card: #1A2332;
+      --bg-input: #0F1419;
+      --bg-footer: #0F1419;
+      --text-primary: #E5E7EB;
+      --text-muted: #9CA3AF;
+      --text-on-footer: #E5E7EB;
+      --accent: #C9A962;
+      --accent-dark: #C9A962;
+      --accent-light: rgba(201, 169, 98, 0.12);
+      --btn-bg: #C9A962;
+      --btn-hover: #E8D5A3;
+      --btn-text: #0F1419;
+      --border: rgba(201, 169, 98, 0.18);
+      --border-strong: rgba(201, 169, 98, 0.4);
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      --radius: 0.125rem;
+      --radius-btn: 0.125rem;
+      --hero-bg:
+        linear-gradient(135deg, rgba(15, 20, 25, 0.92) 0%, rgba(26, 35, 50, 0.85) 50%, rgba(15, 20, 25, 0.95) 100%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A962' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      --img-border: rgba(201, 169, 98, 0.25);
+      --img-border-width: 1px;
+      --faq-hover: rgba(201, 169, 98, 0.08);
+      --toggle-bg: rgba(201, 169, 98, 0.12);
+      --toggle-active: var(--accent);
+    }
+
+    /* ── Theme utilities ── */
+    body { background: var(--bg-body); color: var(--text-primary); transition: background 0.35s ease, color 0.35s ease; }
+    .t-header { background: var(--bg-header); border-color: var(--border); }
+    .t-surface { background: var(--bg-surface); }
+    .t-alt { background: var(--bg-alt); }
+    .t-contact { background: var(--bg-contact); }
+    .t-footer { background: var(--bg-footer); color: var(--text-on-footer); }
+    .t-text { color: var(--text-primary); }
+    .t-muted { color: var(--text-muted); }
+    .t-accent { color: var(--accent-dark); }
+    [data-theme="luxury"] .t-accent { color: var(--accent); }
+    .t-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .t-btn {
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border-radius: var(--radius-btn);
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+    .t-btn:hover { background: var(--btn-hover); }
+    .t-btn:active { transform: scale(0.98); }
+    .t-input {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+    }
+    .t-input:focus {
+      outline: none;
+      border-color: var(--border-strong);
+      box-shadow: 0 0 0 3px var(--accent-light);
+    }
+    .t-input::placeholder { color: var(--text-muted); opacity: 0.65; }
+    .t-hero { background: var(--hero-bg); background-color: var(--bg-body); }
+    .t-badge {
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      border-radius: var(--radius-btn);
+    }
+    [data-theme="luxury"] .t-badge { color: var(--accent); }
+    .t-img-frame {
+      border: var(--img-border-width) solid var(--img-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .t-faq {
+      background: var(--bg-body);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .t-faq summary:hover { background: var(--faq-hover); }
+    .t-gold-line {
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      height: 1px;
+    }
+    .t-icon-circle {
+      background: var(--accent-light);
+      border-radius: 9999px;
+    }
+    .t-nav-link { color: var(--text-muted); }
+    .t-nav-link:hover { color: var(--accent-dark); }
+    [data-theme="luxury"] .t-nav-link:hover { color: var(--accent); }
+
+    .theme-friendly-only { display: block; }
+    .theme-luxury-only { display: none; }
+    [data-theme="luxury"] .theme-friendly-only { display: none !important; }
+    [data-theme="luxury"] .theme-luxury-only { display: block; }
+    .theme-luxury-only.inline { display: none; }
+    [data-theme="luxury"] .theme-luxury-only.inline { display: inline; }
+    .theme-friendly-only.inline { display: inline; }
+    [data-theme="luxury"] .theme-friendly-only.inline { display: none !important; }
+
+    [data-theme="luxury"] .t-footer .t-muted { color: rgba(229, 231, 235, 0.55); }
+    [data-theme="luxury"] input[type="date"] { color-scheme: dark; }
+
+    /* Theme toggle */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.65rem;
+      border-radius: 9999px;
+      background: var(--toggle-bg);
+      border: 1px solid var(--border);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      min-height: 2.5rem;
+      min-width: 2.5rem;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .theme-toggle:hover { border-color: var(--border-strong); }
+    .theme-toggle .toggle-opt { padding: 0.2rem 0.45rem; border-radius: 9999px; transition: all 0.25s ease; white-space: nowrap; }
+    .theme-toggle .toggle-opt.active { background: var(--toggle-active); color: var(--btn-text); }
+    [data-theme="friendly"] .theme-toggle .toggle-opt[data-theme-opt="friendly"],
+    [data-theme="luxury"] .theme-toggle .toggle-opt[data-theme-opt="luxury"] {
+      background: var(--toggle-active);
+      color: var(--btn-text);
+    }
+    [data-theme="luxury"] .theme-toggle .toggle-opt[data-theme-opt="friendly"] { background: transparent; color: var(--text-muted); }
+    [data-theme="friendly"] .theme-toggle .toggle-opt[data-theme-opt="luxury"] { background: transparent; color: var(--text-muted); }
+
+    /* FAQ */
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .faq-chevron { transform: rotate(180deg); }
+
+    /* Mobile menu */
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    #mobile-menu.open { max-height: 20rem; }
+
+    /* Luxury hero glow */
+    [data-theme="luxury"] .luxury-glow-1 {
+      position: absolute; top: 25%; left: 25%; width: 16rem; height: 16rem;
+      background: rgba(201, 169, 98, 0.05); border-radius: 9999px; filter: blur(48px);
+    }
+    [data-theme="luxury"] .luxury-glow-2 {
+      position: absolute; bottom: 25%; right: 25%; width: 12rem; height: 12rem;
+      background: rgba(201, 169, 98, 0.08); border-radius: 9999px; filter: blur(48px);
+    }
+
+    @media (max-width: 639px) {
+      .theme-toggle .toggle-label-long { display: none; }
+      .theme-toggle { padding: 0.4rem; gap: 0.2rem; }
+      .theme-toggle .toggle-opt { padding: 0.25rem 0.4rem; font-size: 0.65rem; }
+    }
+    @media (min-width: 640px) {
+      .theme-toggle .toggle-label-short { display: none; }
+    }
+  </style>
+  <script>
+    (function () {
+      var saved = localStorage.getItem('sip-smile-theme');
+      if (saved === 'luxury' || saved === 'friendly') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Navigation -->
+  <header class="t-header fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14 sm:h-16 gap-2">
+        <a href="#" class="font-display text-lg sm:text-2xl font-semibold t-accent tracking-tight truncate min-w-0 shrink">
+          Sip &amp; Smile
+        </a>
+
+        <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold shrink-0">
+          <a href="#about" class="t-nav-link transition-colors">About</a>
+          <a href="#services" class="t-nav-link transition-colors">Services</a>
+          <a href="#faq" class="t-nav-link transition-colors">FAQ</a>
+          <a href="#contact" class="t-nav-link transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch between Friendly and Luxury theme"
+            title="Compare themes"
+          >
+            <span class="toggle-opt" data-theme-opt="friendly">
+              <span class="toggle-label-short">☀️</span>
+              <span class="toggle-label-long">Friendly</span>
+            </span>
+            <span class="toggle-opt" data-theme-opt="luxury">
+              <span class="toggle-label-short">✨</span>
+              <span class="toggle-label-long">Luxury</span>
+            </span>
+          </button>
+
+          <button
+            type="button"
+            id="menu-btn"
+            class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg t-nav-link border border-transparent hover:border-[var(--border)]"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg class="w-6 h-6" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <a href="#contact" class="hidden sm:inline-flex t-btn text-sm font-bold px-4 py-2.5 items-center">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden border-t border-[var(--border)]">
+        <div class="py-3 flex flex-col gap-1">
+          <a href="#about" class="mobile-nav-link t-nav-link font-semibold px-2 py-3 rounded-lg hover:bg-[var(--accent-light)] transition-colors">About</a>
+          <a href="#services" class="mobile-nav-link t-nav-link font-semibold px-2 py-3 rounded-lg hover:bg-[var(--accent-light)] transition-colors">Services</a>
+          <a href="#faq" class="mobile-nav-link t-nav-link font-semibold px-2 py-3 rounded-lg hover:bg-[var(--accent-light)] transition-colors">FAQ</a>
+          <a href="#contact" class="mobile-nav-link t-nav-link font-semibold px-2 py-3 rounded-lg hover:bg-[var(--accent-light)] transition-colors">Contact</a>
+          <a href="#contact" class="sm:hidden mobile-nav-link t-btn font-bold text-center px-4 py-3 mt-1">Book Now</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="t-hero min-h-[100dvh] flex items-center justify-center relative overflow-hidden pt-14 sm:pt-16">
+    <div class="theme-friendly-only">
+      <div class="absolute top-20 right-4 sm:right-8 text-3xl sm:text-4xl opacity-20 select-none pointer-events-none" aria-hidden="true">🐸</div>
+      <div class="absolute bottom-28 left-4 sm:left-10 text-2xl sm:text-3xl opacity-15 select-none pointer-events-none" aria-hidden="true">🐸</div>
+    </div>
+    <div class="theme-luxury-only pointer-events-none" aria-hidden="true">
+      <div class="luxury-glow-1"></div>
+      <div class="luxury-glow-2"></div>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      <!-- Friendly hero copy -->
+      <div class="theme-friendly-only">
+        <p class="t-accent text-sm sm:text-base font-semibold mb-3">Event Bartending &middot; Dayton, OH</p>
+        <h1 class="font-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold t-text leading-tight mb-5">Sip &amp; Smile</h1>
+        <p class="text-base sm:text-lg md:text-xl t-muted max-w-xl mx-auto leading-relaxed mb-3 px-1">
+          Great drinks, good vibes, and a bartender who actually makes your guests feel at home.
+        </p>
+        <p class="t-accent font-medium text-sm sm:text-base mb-8">Lisa Alicea &mdash; Ohio Licensed Bartender</p>
+        <a href="#contact" class="inline-flex t-btn font-bold text-base px-7 sm:px-8 py-3.5 items-center justify-center min-h-[3rem] w-full max-w-xs sm:w-auto sm:max-w-none mx-auto">
+          Let's Plan Your Event
+        </a>
+        <p class="text-xs sm:text-sm t-muted mt-6">Based in Dayton &middot; Happy to travel for the right event</p>
+      </div>
+
+      <!-- Luxury hero copy -->
+      <div class="theme-luxury-only">
+        <p class="t-accent text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-4 sm:mb-6 font-medium">Premium Event Bartending</p>
+        <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold t-text leading-tight mb-4 sm:mb-6">Sip &amp; Smile</h1>
+        <div class="t-gold-line w-20 sm:w-32 mx-auto mb-6 sm:mb-8"></div>
+        <p class="text-base sm:text-xl md:text-2xl t-muted font-light max-w-2xl mx-auto leading-relaxed mb-4 sm:mb-5 px-1">
+          Elevating your celebration with craft cocktails, warm hospitality, and a beverage experience your guests will remember.
+        </p>
+        <p class="t-accent text-sm sm:text-base tracking-wide mb-8 sm:mb-10 opacity-80">Lisa Alicea &mdash; Ohio Licensed Bartender &middot; Dayton, OH</p>
+        <a href="#contact" class="inline-flex t-btn font-semibold text-sm sm:text-base uppercase tracking-widest px-8 sm:px-10 py-3.5 sm:py-4 items-center justify-center min-h-[3rem] w-full max-w-xs sm:w-auto sm:max-w-none mx-auto shadow-lg">
+          Book Now
+        </a>
+        <p class="text-xs sm:text-sm t-muted mt-6 opacity-70">Available for travel on select events</p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 hidden sm:block">
+      <a href="#about" class="t-accent opacity-50 hover:opacity-100 transition-opacity" aria-label="Scroll to about section">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Lisa -->
+  <section id="about" class="py-14 sm:py-20 t-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-center">
+        <div class="order-2 lg:order-1">
+          <p class="t-accent font-semibold text-sm mb-2 theme-friendly-only">Nice to meet you!</p>
+          <p class="t-accent text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 font-medium theme-luxury-only">About Lisa</p>
+
+          <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold t-text mb-4 sm:mb-5 leading-tight">
+            <span class="theme-friendly-only">Hi, I'm Lisa!</span>
+            <span class="theme-luxury-only">Lisa Alicea,<br class="hidden sm:block" /> Your Local Bartender</span>
+          </h2>
+
+          <div class="space-y-4 t-muted leading-relaxed text-base sm:text-lg">
+            <p>
+              I'm the friendly face behind Sip &amp; Smile — a Dayton-based bartender who loves making people smile as much as she loves making a great drink.
+            </p>
+            <p>
+              I'm newer to the bartending world, but you'd never know it. My personality, warmth, and Ohio Bartender License mean your guests get someone who's professional, personable, and genuinely fun to be around.
+            </p>
+            <p>
+              Weddings are my favorite, but I'm happy to bartend all kinds of celebrations — birthdays, showers, corporate get-togethers, you name it. If there's a reason to raise a glass, I'm in.
+            </p>
+            <p class="theme-friendly-only">
+              Off the clock? I'm probably hanging out with my frogs, being everyone's favorite person at the party, or planning my next event. 🐸
+            </p>
+            <p class="theme-luxury-only">
+              From the first pour to the last toast, my goal is simple: make your guests feel welcomed, your event run seamlessly, and your celebration unforgettable.
+            </p>
+          </div>
+
+          <div class="mt-6 inline-flex items-center gap-2 t-badge text-sm font-semibold px-4 py-2">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Ohio Bartender License
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end w-full">
+          <div class="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md mx-auto lg:mx-0">
+            <div class="aspect-[4/5] overflow-hidden t-img-frame">
+              <img
+                src="lisa.jpg"
+                alt="Lisa Alicea, event bartender for Sip &amp; Smile"
+                class="w-full h-full object-cover object-center"
+                loading="eager"
+                width="400"
+                height="500"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-14 sm:py-20 t-alt">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+        <p class="t-accent font-semibold text-sm mb-2 theme-friendly-only">How it works</p>
+        <p class="t-accent text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 font-medium theme-luxury-only">What We Offer</p>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold t-text mb-4">The Dry Hire Standard</h2>
+        <p class="t-muted text-base sm:text-lg leading-relaxed px-1">
+          <span class="theme-friendly-only">Sip &amp; Smile is a <strong class="t-text">Dry Hire</strong> service — you buy the booze, Lisa brings everything else. Simple, transparent, and easy to plan around.</span>
+          <span class="theme-luxury-only">Sip &amp; Smile operates exclusively as a <strong class="t-accent font-medium">Dry Hire</strong> service — giving you full control over your beverage budget while Lisa handles everything else at your event.</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
+        <div class="t-card p-5 sm:p-8">
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="t-icon-circle flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center">
+              <span class="theme-friendly-only text-lg sm:text-xl">🛒</span>
+              <svg class="theme-luxury-only w-5 h-5 t-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-display text-lg sm:text-xl font-bold t-text mb-2">
+                <span class="theme-friendly-only">You Buy the Alcohol</span>
+                <span class="theme-luxury-only">You Provide the Alcohol</span>
+              </h3>
+              <p class="t-muted leading-relaxed text-sm sm:text-base">
+                You purchase <strong class="t-text">100% of the alcohol</strong> for your event.
+                <span class="theme-friendly-only"> That way you control the budget and pick exactly what your guests will love.</span>
+                <span class="theme-luxury-only"> This keeps costs transparent and lets you choose exactly what your guests will enjoy.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-card p-5 sm:p-8">
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="t-icon-circle flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center">
+              <span class="theme-friendly-only text-lg sm:text-xl">✨</span>
+              <svg class="theme-luxury-only w-5 h-5 t-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-display text-lg sm:text-xl font-bold t-text mb-2">Lisa Brings the Rest</h3>
+              <p class="t-muted leading-relaxed text-sm sm:text-base">
+                Lisa supplies <strong class="t-text">custom mixers, fresh garnishes, ice, and bar tools</strong>
+                <span class="theme-friendly-only"> — everything needed to serve your guests like a pro.</span>
+                <span class="theme-luxury-only"> — so every cocktail is crafted to perfection.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
+        <div class="t-card text-center p-3 sm:p-5">
+          <p class="theme-friendly-only text-xl sm:text-2xl mb-1">🍹</p>
+          <p class="font-display theme-luxury-only text-xl sm:text-2xl t-accent mb-1">Mixers</p>
+          <p class="font-semibold t-text text-xs sm:text-base theme-friendly-only">Mixers</p>
+          <p class="t-muted text-xs sm:text-sm theme-luxury-only">Custom-crafted</p>
+        </div>
+        <div class="t-card text-center p-3 sm:p-5">
+          <p class="theme-friendly-only text-xl sm:text-2xl mb-1">🍋</p>
+          <p class="font-display theme-luxury-only text-xl sm:text-2xl t-accent mb-1">Garnishes</p>
+          <p class="font-semibold t-text text-xs sm:text-base theme-friendly-only">Garnishes</p>
+          <p class="t-muted text-xs sm:text-sm theme-luxury-only">Fresh &amp; seasonal</p>
+        </div>
+        <div class="t-card text-center p-3 sm:p-5">
+          <p class="theme-friendly-only text-xl sm:text-2xl mb-1">🧊</p>
+          <p class="font-display theme-luxury-only text-xl sm:text-2xl t-accent mb-1">Ice</p>
+          <p class="font-semibold t-text text-xs sm:text-base theme-friendly-only">Ice</p>
+          <p class="t-muted text-xs sm:text-sm theme-luxury-only">Properly prepared</p>
+        </div>
+        <div class="t-card text-center p-3 sm:p-5">
+          <p class="theme-friendly-only text-xl sm:text-2xl mb-1">🍸</p>
+          <p class="font-display theme-luxury-only text-xl sm:text-2xl t-accent mb-1">Bar Tools</p>
+          <p class="font-semibold t-text text-xs sm:text-base theme-friendly-only">Bar Tools</p>
+          <p class="t-muted text-xs sm:text-sm theme-luxury-only">Fully equipped</p>
+        </div>
+      </div>
+
+      <p class="text-center t-muted text-xs sm:text-sm mt-6 sm:mt-8 px-2">
+        Every event is different — <a href="#contact" class="t-accent font-semibold hover:underline">send an inquiry</a> for a custom quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-14 sm:py-20 t-surface">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8 sm:mb-10">
+        <p class="t-accent font-semibold text-sm mb-2 theme-friendly-only">Good to know</p>
+        <p class="t-accent text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 font-medium theme-luxury-only">Questions</p>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold t-text">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-2 sm:space-y-3">
+        <details class="t-faq overflow-hidden">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer px-4 sm:px-5 py-4 font-semibold t-text text-sm sm:text-base transition-colors min-h-[3rem]">
+            <span>What areas do you serve?</span>
+            <svg class="faq-chevron w-5 h-5 t-accent flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 sm:px-5 pb-4 t-muted leading-relaxed text-sm sm:text-base">
+            Lisa is based in Dayton, Ohio and primarily serves the local area. She's also open to traveling for the right event — just include your location in your inquiry and she'll let you know what's possible.
+          </div>
+        </details>
+
+        <details class="t-faq overflow-hidden">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer px-4 sm:px-5 py-4 font-semibold t-text text-sm sm:text-base transition-colors min-h-[3rem]">
+            <span>What types of events do you bartend?</span>
+            <svg class="faq-chevron w-5 h-5 t-accent flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 sm:px-5 pb-4 t-muted leading-relaxed text-sm sm:text-base">
+            Weddings are a specialty, but Lisa bartends all kinds of celebrations — private parties, showers, corporate events, and more. If you're not sure whether your event is a fit, just ask!
+          </div>
+        </details>
+
+        <details class="t-faq overflow-hidden">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer px-4 sm:px-5 py-4 font-semibold t-text text-sm sm:text-base transition-colors min-h-[3rem]">
+            <span>Do you bartend at private homes?</span>
+            <svg class="faq-chevron w-5 h-5 t-accent flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 sm:px-5 pb-4 t-muted leading-relaxed text-sm sm:text-base">
+            Residential events are reviewed on a case-by-case basis. Lisa is happy to serve at larger homes that can comfortably accommodate your guest count and provide a safe, suitable space for bartending. Standard residential settings may not always be the best fit — share your venue details in your inquiry and she'll be upfront about whether she can make it work.
+          </div>
+        </details>
+
+        <details class="t-faq overflow-hidden">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer px-4 sm:px-5 py-4 font-semibold t-text text-sm sm:text-base transition-colors min-h-[3rem]">
+            <span>How does pricing work?</span>
+            <svg class="faq-chevron w-5 h-5 t-accent flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 sm:px-5 pb-4 t-muted leading-relaxed text-sm sm:text-base">
+            Pricing depends on your event — date, guest count, location, and duration all factor in. Fill out the inquiry form below and Lisa will get back to you with a personalized quote. No surprises, no pressure.
+          </div>
+        </details>
+
+        <details class="t-faq overflow-hidden">
+          <summary class="flex items-center justify-between gap-3 cursor-pointer px-4 sm:px-5 py-4 font-semibold t-text text-sm sm:text-base transition-colors min-h-[3rem]">
+            <span>What is dry hire?</span>
+            <svg class="faq-chevron w-5 h-5 t-accent flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-4 sm:px-5 pb-4 t-muted leading-relaxed text-sm sm:text-base">
+            Dry hire means you purchase all the alcohol and Lisa provides the bartending service plus mixers, garnishes, ice, and equipment. It's a popular option for events because you stay in control of your beverage budget.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-14 sm:py-20 t-contact">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="text-center mb-8 sm:mb-10">
+        <p class="t-accent font-semibold text-sm mb-2 theme-friendly-only">Ready to chat?</p>
+        <p class="t-accent text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 font-medium theme-luxury-only">Get In Touch</p>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold t-text mb-3">Book Your Event</h2>
+        <p class="t-muted text-base sm:text-lg px-1">
+          Tell Lisa about your celebration — she'll get back to you with a quote.
+        </p>
+      </div>
+
+      <form class="space-y-4 sm:space-y-5 t-card p-5 sm:p-8" action="#" method="POST">
+        <div>
+          <label for="name" class="block text-sm font-semibold t-text mb-1.5">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name"
+            class="t-input w-full px-4 py-3 text-base min-h-[3rem]"
+            placeholder="Your full name" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-semibold t-text mb-1.5">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email"
+            class="t-input w-full px-4 py-3 text-base min-h-[3rem]"
+            placeholder="you@example.com" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div>
+            <label for="event-date" class="block text-sm font-semibold t-text mb-1.5">Event Date</label>
+            <input type="date" id="event-date" name="event-date" required
+              class="t-input w-full px-4 py-3 text-base min-h-[3rem]" />
+          </div>
+          <div>
+            <label for="guest-count" class="block text-sm font-semibold t-text mb-1.5">Guest Count</label>
+            <input type="number" id="guest-count" name="guest-count" required min="1"
+              class="t-input w-full px-4 py-3 text-base min-h-[3rem]"
+              placeholder="Estimated guests" />
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold t-text mb-1.5">Message</label>
+          <textarea id="message" name="message" rows="5" required
+            class="t-input w-full px-4 py-3 text-base resize-y min-h-[8rem]"
+            placeholder="Tell Lisa about your event — venue, vibe, anything she should know..."></textarea>
+        </div>
+
+        <button type="submit" class="t-btn w-full sm:w-auto font-bold px-10 py-3.5 min-h-[3rem] text-base">
+          Send Inquiry
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="t-footer py-8 sm:py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-display text-lg sm:text-xl font-semibold mb-1">Sip &amp; Smile</p>
+      <p class="opacity-60 text-sm mb-4">Lisa Alicea &middot; Dayton, OH</p>
+      <p class="opacity-50 text-xs sm:text-sm mb-3">&copy; 2026 Sip &amp; Smile. All rights reserved.</p>
+      <p class="opacity-40 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed px-2">
+        Sip &amp; Smile Bar is a DBA of MARRERO LLC. Services provided under MARRERO LLC. All clients are subject to standard event-liability waivers.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var toggle = document.getElementById('theme-toggle');
+      var menuBtn = document.getElementById('menu-btn');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('menu-icon-open');
+      var iconClose = document.getElementById('menu-icon-close');
+
+      function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('sip-smile-theme', theme);
+      }
+
+      function getTheme() {
+        return html.getAttribute('data-theme') === 'luxury' ? 'luxury' : 'friendly';
+      }
+
+      toggle.addEventListener('click', function (e) {
+        var opt = e.target.closest('[data-theme-opt]');
+        if (opt) {
+          setTheme(opt.getAttribute('data-theme-opt'));
+        } else {
+          setTheme(getTheme() === 'friendly' ? 'luxury' : 'friendly');
+        }
+      });
+
+      function closeMenu() {
+        mobileMenu.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+
+      menuBtn.addEventListener('click', function () {
+        var isOpen = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        iconOpen.classList.toggle('hidden', isOpen);
+        iconClose.classList.toggle('hidden', !isOpen);
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    })();
+  </script>
+
+</body>
+</html>
