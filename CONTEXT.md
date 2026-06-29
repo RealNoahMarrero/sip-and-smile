@@ -41,9 +41,8 @@ Residential events are **case-by-case**. Lisa will serve at **larger homes** tha
 
 ## About Lisa (voice & personality)
 
-- Warm, friendly, personable  
-- Loves frogs (subtle nods OK in friendly theme; hidden in luxury theme)  
-- Site tone should feel **approachable**, not overly luxurious — though a luxury theme variant exists for comparison  
+- Warm, friendly, personable — even within the upscale visual design  
+- Loves frogs (not currently on the site; can add subtle touches if desired)  
 - First-person copy from Lisa’s perspective in the About section  
 
 ## Legal footer (required)
@@ -57,33 +56,30 @@ Single-page HTML site (`index.html`) with these sections:
 1. **Hero** — Brand, tagline, CTA → `#contact`  
 2. **About** — Lisa intro, photo, license badge  
 3. **Services** — Dry Hire Standard  
-4. **FAQ** — Service area, event types, home events, pricing, dry hire  
-5. **Contact** — Inquiry form (Name, Email, Event Date, Guest Count, Message)  
-6. **Footer** — Copyright + legal notice  
+4. **How It Works** — 3-step booking process + event type badges  
+5. **FAQ** — Service area, event types, home events, pricing, dry hire  
+6. **Contact** — Inquiry form (Name, Email, Venue Location, Event Date, Guest Count, Message)  
+7. **Footer** — Copyright + legal notice  
 
-## Theme system
+## Design (final — luxury theme)
 
-Two switchable themes for Lisa to compare preferences:
+Lisa chose the **luxury** look. Single theme only — no toggle.
 
-| | **Friendly** (default) | **Luxury** |
-|---|------------------------|------------|
-| **Feel** | Warm, casual, approachable | Dark, gold, upscale |
-| **Fonts** | Fraunces + Nunito Sans | Cormorant Garamond + Inter |
-| **Colors** | Cream, sage green, coral | Charcoal, gold |
-| **Hero** | Casual copy, frog accents | “Premium Event Bartending”, gold line |
-| **Icons** | Emojis in services | SVG icons |
-
-- Toggle lives in the **header** (☀️ Friendly / ✨ Luxury on mobile).  
-- Preference stored in `localStorage` under key `sip-smile-theme`.  
-- When Lisa picks a final theme, remove the toggle and lock one theme for production.
+| | Detail |
+|---|--------|
+| **Feel** | Dark charcoal, gold accents, upscale |
+| **Fonts** | Cormorant Garamond (headings) + Inter (body) |
+| **Hero** | “Premium Event Bartending”, gold divider line |
+| **Icons** | SVG icons in services section |
 
 ## Tech stack
 
 - Plain **HTML** (no build step)  
 - **Tailwind CSS** via CDN  
-- **Google Fonts** (both theme font sets loaded)  
-- Vanilla JS for theme toggle + mobile nav  
-- Assets: `lisa.jpg` (About section headshot)  
+- **Google Fonts** — Cormorant Garamond + Inter  
+- Vanilla JS for mobile nav only  
+- Assets: `lisa.jpg` (About + link previews), `hero.jpg` (blurred hero background), `logo.png` (official logo, on file), `favicon.svg` (browser tab, transparent)  
+- **Production URL:** https://sipandsmileevents.netlify.app/ (update canonical/OG tags if custom domain changes)  
 
 ## Mobile requirements
 
@@ -116,8 +112,13 @@ Repo → Settings → Pages → Deploy from branch `master`, root `/`.
 ## Not yet implemented
 
 - [ ] Form backend (Formspree, Netlify Forms, custom API, etc.) — form currently `action="#"`  
-- [ ] Custom domain  
-- [ ] Final theme chosen (toggle still present)  
+- [ ] Custom domain (update `canonical`, `og:url`, and `og:image` to absolute custom-domain URLs)  
+- [x] Final theme chosen — **luxury** (toggle removed)  
+- [x] Favicon (`favicon.svg`)  
+- [x] Open Graph / Twitter link preview meta tags  
+- [x] JSON-LD structured data (ProfessionalService)  
+- [x] How It Works section  
+- [ ] Image compression (`hero.jpg` / `lisa.jpg` are ~1MB each — compress before launch)  
 - [ ] Social links (explicitly deferred)  
 - [ ] Public email / phone (explicitly deferred)  
 
