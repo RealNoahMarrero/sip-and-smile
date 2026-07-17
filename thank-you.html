@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Sip &amp; Smile</title>
+  <meta name="description" content="Your inquiry was sent to Sip &amp; Smile. Lisa will get back to you soon." />
+  <meta name="theme-color" content="#0F1419" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="canonical" href="https://sipandsmileevents.netlify.app/thank-you.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --bg-body: #0F1419;
+      --text-primary: #E5E7EB;
+      --text-muted: #9CA3AF;
+      --accent: #C9A962;
+      --btn-bg: #C9A962;
+      --btn-hover: #E8D5A3;
+      --btn-text: #0F1419;
+      --radius: 0.125rem;
+    }
+    body { background: var(--bg-body); color: var(--text-primary); }
+    .t-text { color: var(--text-primary); }
+    .t-muted { color: var(--text-muted); }
+    .t-accent { color: var(--accent); }
+    .t-btn {
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border-radius: var(--radius);
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+    .t-btn:hover { background: var(--btn-hover); }
+    .t-btn:active { transform: scale(0.98); }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-[100dvh] flex flex-col">
+  <main class="flex-1 flex items-center justify-center px-4 sm:px-6 py-16">
+    <div class="max-w-lg w-full text-center">
+      <p class="font-display text-2xl sm:text-3xl t-accent mb-4">Sip &amp; Smile</p>
+      <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-semibold t-text mb-4">
+        Thank you
+      </h1>
+      <p class="t-muted text-base sm:text-lg leading-relaxed mb-8">
+        Your inquiry is on its way. Lisa will review the details and get back to you with a quote.
+      </p>
+      <a href="/" class="t-btn inline-flex font-semibold uppercase tracking-widest text-sm px-8 py-3.5 min-h-[3rem] items-center">
+        Back to Home
+      </a>
+    </div>
+  </main>
+</body>
+</html>
