@@ -111,7 +111,7 @@ Repo → Settings → Pages → Deploy from branch `master`, root `/`.
 
 ## Not yet implemented
 
-- [x] Form backend — **Netlify Forms** (`name="contact"`, honeypot, success page `/thank-you.html`). **Required once:** Netlify → Forms → Enable form detection, then redeploy. Then: Forms → Form notifications for Lisa’s email. If `data-netlify` is still visible in live HTML, detection did not run.  
+- [x] Form backend — **Netlify Forms** (`name="contact"`, honeypot, success page `/thank-you.html`). Email subject is set via a hidden `subject` field (includes submitter name). Notifications: Netlify → Forms / Configuration → Form notifications. If `data-netlify` is still visible in live HTML, enable form detection and redeploy.  
 - [ ] Custom domain (update `canonical`, `og:url`, and `og:image` to absolute custom-domain URLs)  
 - [x] Final theme chosen — **luxury** (toggle removed)  
 - [x] Favicon (`favicon.svg`)  

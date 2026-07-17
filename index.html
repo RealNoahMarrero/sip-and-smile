@@ -570,6 +570,8 @@
           <label>Don’t fill this out: <input name="bot-field" /></label>
         </p>
         <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" id="form-subject" name="subject" data-remove-prefix
+          value="New Sip and Smile inquiry" />
 
         <div>
           <label for="name" class="block text-sm font-medium t-text mb-1.5">Name</label>
@@ -660,6 +662,24 @@
       window.addEventListener('resize', function () {
         if (window.innerWidth >= 768) closeMenu();
       });
+
+      var contactForm = document.querySelector('form[name="contact"]');
+      var nameInput = document.getElementById('name');
+      var subjectInput = document.getElementById('form-subject');
+
+      function updateFormSubject() {
+        if (!nameInput || !subjectInput) return;
+        var name = (nameInput.value || '').trim();
+        subjectInput.value = name
+          ? 'New Sip and Smile inquiry from ' + name
+          : 'New Sip and Smile inquiry';
+      }
+
+      if (contactForm && nameInput && subjectInput) {
+        nameInput.addEventListener('input', updateFormSubject);
+        contactForm.addEventListener('submit', updateFormSubject);
+        updateFormSubject();
+      }
     })();
   </script>
 
