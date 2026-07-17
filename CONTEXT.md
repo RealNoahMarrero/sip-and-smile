@@ -111,7 +111,7 @@ Repo → Settings → Pages → Deploy from branch `master`, root `/`.
 
 ## Not yet implemented
 
-- [ ] Form backend (Formspree, Netlify Forms, custom API, etc.) — form currently `action="#"`  
+- [x] Form backend — **Netlify Forms** (`name="contact"`, honeypot enabled). Configure email notifications in Netlify → Site → Forms → Form notifications  
 - [ ] Custom domain (update `canonical`, `og:url`, and `og:image` to absolute custom-domain URLs)  
 - [x] Final theme chosen — **luxury** (toggle removed)  
 - [x] Favicon (`favicon.svg`)  
