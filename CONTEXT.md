@@ -79,7 +79,9 @@ Lisa chose the **luxury** look. Single theme only — no toggle.
 - **Google Fonts** — Cormorant Garamond + Inter  
 - Vanilla JS for mobile nav only  
 - Assets: `lisa.jpg` (About + link previews), `hero.jpg` (blurred hero background), `logo.png` (official logo, on file), `favicon.svg` (browser tab, transparent)  
-- **Production URL:** https://sipandsmileevents.netlify.app/ (update canonical/OG tags if custom domain changes)  
+- **Production URL:** https://sipandsmileevents.com/ (Netlify still serves https://sipandsmileevents.netlify.app/)  
+- **Domain registrar:** Namecheap (`sipandsmileevents.com`)  
+- **DNS:** Keep at Namecheap (do not switch nameservers to Netlify) so Google Workspace MX records stay easy to add later  
 
 ## Mobile requirements
 
@@ -112,7 +114,7 @@ Repo → Settings → Pages → Deploy from branch `master`, root `/`.
 ## Not yet implemented
 
 - [x] Form backend — **Netlify Forms** (`name="contact"`, honeypot, success page `/thank-you.html`). Email subject is set via a hidden `subject` field (includes submitter name). Notifications: Netlify → Forms / Configuration → Form notifications. If `data-netlify` is still visible in live HTML, enable form detection and redeploy.  
-- [ ] Custom domain (update `canonical`, `og:url`, and `og:image` to absolute custom-domain URLs)  
+- [x] Custom domain — site URLs point to **https://sipandsmileevents.com/**. Connect domain in Netlify + Namecheap DNS (A/`www` CNAME); SSL provisions after DNS propagates.  
 - [x] Final theme chosen — **luxury** (toggle removed)  
 - [x] Favicon (`favicon.svg`)  
 - [x] Open Graph / Twitter link preview meta tags  
