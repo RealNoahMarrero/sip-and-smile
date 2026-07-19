@@ -120,7 +120,7 @@ Repo → Settings → Pages → Deploy from branch `master`, root `/`.
 - [x] Open Graph / Twitter link preview meta tags  
 - [x] JSON-LD structured data (ProfessionalService)  
 - [x] How It Works section  
-- [ ] Image compression (`hero.jpg` / `lisa.jpg` are ~1MB each — compress before launch)  
+- [ ] Image compression (`hero.jpg` is still ~1MB — compress before launch; `lisa.jpg` replaced Jul 2026, ~320KB)  
 - [ ] Social links (explicitly deferred)  
 - [ ] Public email / phone (explicitly deferred)  
 
